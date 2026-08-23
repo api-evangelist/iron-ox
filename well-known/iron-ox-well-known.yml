@@ -1,0 +1,153 @@
+generated: '2026-08-23'
+method: probed
+source: https://ironox.com/.well-known/
+note: >-
+  Every path below returned HTTP 200 with an identical 114-byte HTML body
+  (<script>window.onload=function(){window.location.href="/lander"}</script>).
+  ironox.com is a GoDaddy parking lander (window.LANDER_SYSTEM="PW",
+  _trfd ap:"parking", nameservers ns71/ns72.domaincontrol.com) that answers
+  200 for every path, so these are SOFT-404s, not served documents. Recorded
+  as misses. No WellKnown / SecurityTxt pointer is emitted from this probe.
+  Iron Ox (the robotic-farming company) ceased operations in 2023 and no
+  longer controls this host; see x-coverage in apis.yml.
+hosts:
+- host: ironox.com
+  note: >-
+    Parked domain, not operated by Iron Ox. Catch-all 200 on every path;
+    all documents below are soft-404s and are recorded as absent.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    result: soft-404
+    content_type: text/html
+    bytes: 114
+    file: null
+    note: >-
+      Parked-domain catch-all HTML shell (114-byte redirect to /lander); not a
+      real doc. Nothing was saved.
+  - path: /.well-known/openid-configuration
+    status: 200
+    result: soft-404
+    content_type: text/html
+    bytes: 114
+    file: null
+    note: >-
+      Parked-domain catch-all HTML shell (114-byte redirect to /lander); not a
+      real doc. Nothing was saved.
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    result: soft-404
+    content_type: text/html
+    bytes: 114
+    file: null
+    note: >-
+      Parked-domain catch-all HTML shell (114-byte redirect to /lander); not a
+      real doc. Nothing was saved.
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    result: soft-404
+    content_type: text/html
+    bytes: 114
+    file: null
+    note: >-
+      Parked-domain catch-all HTML shell (114-byte redirect to /lander); not a
+      real doc. Nothing was saved.
+  - path: /.well-known/api-catalog
+    status: 200
+    result: soft-404
+    content_type: text/html
+    bytes: 114
+    file: null
+    note: >-
+      Parked-domain catch-all HTML shell (114-byte redirect to /lander); not a
+      real doc. Nothing was saved.
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    result: soft-404
+    content_type: text/html
+    bytes: 114
+    file: null
+    note: >-
+      Parked-domain catch-all HTML shell (114-byte redirect to /lander); not a
+      real doc. Nothing was saved.
+  - path: /.well-known/agent-card.json
+    status: 200
+    result: soft-404
+    content_type: text/html
+    bytes: 114
+    file: null
+    note: >-
+      Parked-domain catch-all HTML shell (114-byte redirect to /lander); not a
+      real doc. Nothing was saved.
+  - path: /.well-known/agent.json
+    status: 200
+    result: soft-404
+    content_type: text/html
+    bytes: 114
+    file: null
+    note: >-
+      Parked-domain catch-all HTML shell (114-byte redirect to /lander); not a
+      real doc. Nothing was saved.
+x-contract-discovery:
+  checked: '2026-08-23'
+  outcome: no-published-contract
+  summary: >-
+    STEP 0b contract discovery found no OpenAPI, Swagger, GraphQL SDL, AsyncAPI,
+    MCP server, A2A agent card, .proto or WSDL for Iron Ox on any host. The only
+    remaining host (ironox.com) is a parking lander that returns a 200 catch-all
+    for every path, and every developer/API subdomain is NXDOMAIN.
+  hosts_probed:
+  - host: ironox.com
+    state: parked-catch-all
+    paths:
+    - {path: /openapi.json, status: 200, result: soft-404}
+    - {path: /openapi.yaml, status: 200, result: soft-404}
+    - {path: /swagger.json, status: 200, result: soft-404}
+    - {path: /v1/openapi.json, status: 200, result: soft-404}
+    - {path: /api-docs, status: 200, result: soft-404}
+    - {path: /docs, status: 200, result: soft-404}
+    - {path: /redoc, status: 200, result: soft-404}
+    - {path: /graphql, status: 200, result: soft-404}
+    - {path: /apis.json, status: 200, result: soft-404}
+    - {path: /llms.txt, status: 200, result: parking-boilerplate, note: 'GoDaddy parking llms.txt; sitemap lists only /lander'}
+    - {path: /robots.txt, status: 200, result: parking-boilerplate}
+    - {path: /sitemap.xml, status: 200, result: parking-boilerplate, note: 'single URL: https://ironox.com/lander'}
+  - {host: api.ironox.com, state: nxdomain, status: 0}
+  - {host: docs.ironox.com, state: nxdomain, status: 0}
+  - {host: developer.ironox.com, state: nxdomain, status: 0}
+  - {host: support.ironox.com, state: nxdomain, status: 0, note: 'Zendesk help center linked from the 2023 site; DNS removed'}
+  registries_probed:
+  - {registry: npm, query: iron-ox, result: no first-party package}
+  - {registry: pypi, package: iron-ox, status: 404}
+  - {registry: pypi, package: ironox, status: 404}
+  - {registry: rubygems, package: iron-ox, status: 404}
+  - {registry: crates.io, package: iron-ox, status: 404}
+  github_org:
+    url: https://github.com/iron-ox
+    status: 200
+    public_repos: 47
+    first_party_repos: 5
+    note: >-
+      Verified as this company: org name "Iron Ox", blog http://ironox.com,
+      created 2015-10-10, avatar is the Iron Ox seedling logo. Content is
+      internal ROS robotics tooling — 42 of 47 repos are forks of ROS-Industrial
+      / MoveIt / Cartographer / vendor camera and arm drivers. The five
+      first-party repos (trajectory_smoothing, simple_fiducial_mapping,
+      fadecandy_ros, fadecandy_ros-release, segway_v3_robot/_simulator) are ROS
+      packages, not a product API contract. Last push 2022; org last updated
+      2022-11-11.
+  archive_evidence:
+  - url: http://web.archive.org/web/20230512054457/https://ironox.com/
+    status: 200
+    note: >-
+      Last substantive capture of the live site — a WordPress marketing site
+      (about-us, blog, careers, food, technology, sustainability, press). No
+      developer portal, no API reference, no SDK page. The only /api-shaped
+      URLs were WordPress core (/wp-json/, /xmlrpc.php), which is CMS
+      infrastructure, not a published product API.
+  - url: http://web.archive.org/web/20230812090055/https://ironox.com/
+    status: 404
+    note: Site returning 404 by 2023-08-12; no captures at all Oct 2023 - Mar 2024.
+  - url: http://web.archive.org/web/20240403211810/https://www.ironox.com/
+    status: 200
+    note: First capture of the parking lander (537 bytes).

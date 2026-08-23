@@ -1,23 +1,178 @@
 aid: iron-ox
 name: Iron Ox
-description: 'Iron Ox is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+image: https://avatars.githubusercontent.com/u/15058167?v=4
+description: 'Iron Ox (legally Inevitable Tech, Inc.) was a San Carlos, California
+  robotics company that built autonomous indoor farms — hydroponic greenhouses worked
+  by mobile transport robots and a robotic arm that seeded, moved, imaged and harvested
+  leafy greens and herbs, with machine learning used to spot pests and disease plant
+  by plant. Founded in 2015 by Brandon Alexander and Jon Binney, it went through Y
+  Combinator (W16), raised roughly $98 million in total including a $53 million Series
+  C led by Breakthrough Energy Ventures in September 2021, and ran greenhouses in
+  Gilroy, California and Lockhart, Texas. It cut about half its staff — roughly 50
+  people — in November 2022 and ceased operations in mid-2023. Iron Ox never ran a
+  developer program: it sold produce, not software, and the only public code it ever
+  shipped was internal ROS robotics tooling on GitHub. Its site, ironox.com, is now
+  a GoDaddy parking lander and every developer subdomain has been removed from DNS,
+  so there is no API, specification, SDK or documentation surface left to profile.'
 url: https://raw.githubusercontent.com/api-evangelist/iron-ox/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
-specificationVersion: '0.20'
+x-harvest-source: https://forgeglobal.com/iron-ox_stock/
+x-tier: no-public-api
+x-tier-reason: defunct-no-api-surface
+x-status: defunct
+x-defunct:
+  legal_name: Inevitable Tech, Inc.
+  founded: '2015'
+  founders:
+  - Brandon Alexander
+  - Jon Binney
+  accelerator: Y Combinator (W16)
+  headquarters: San Carlos, California, United States
+  facilities:
+  - Gilroy, California (robotic greenhouse)
+  - Lockhart, Texas (535,000 sq ft greenhouse)
+  total_funding_usd: 98000000
+  last_round:
+    stage: Series C
+    amount_usd: 53000000
+    date: '2021-09'
+    lead: Breakthrough Energy Ventures
+  layoffs:
+    date: '2022-11'
+    headcount: 50
+    note: approximately half of staff
+  ceased: '2023'
+  ceased_precision: month-unknown
+  ceased_evidence: >-
+    Last substantive Wayback capture of ironox.com is 2023-05-12 (14,584 bytes);
+    the host was returning 404 by 2023-08-12 and had no captures at all between
+    2023-10 and 2024-03. Y Combinator's company directory lists the company as
+    "Inactive". Crunchbase records the organization as permanently closed.
+  disposition: >-
+    No acquirer identified. The Lockhart, Texas facility was sold and was being
+    re-tenanted as of late 2024. The ironox.com domain has been re-registered
+    through a GoDaddy reseller and is parked for sale.
+x-probe:
+  date: '2026-08-23'
+  method: probed
+  findings:
+  - host: ironox.com
+    http_status: 200
+    note: >-
+      GoDaddy parking lander. Every path returns an identical 114-byte HTML
+      redirect to /lander (window.LANDER_SYSTEM="PW", _trfd ap:"parking";
+      nameservers ns71/ns72.domaincontrol.com). All 200s are soft-404s — no
+      OpenAPI, Swagger, GraphQL, apis.json, agent card or .well-known document
+      is actually served. The /llms.txt and /robots.txt it answers with are
+      GoDaddy parking boilerplate whose sitemap contains only /lander; they are
+      not Iron Ox artifacts and are not saved.
+  - host: api.ironox.com
+    http_status: 0
+    note: NXDOMAIN
+  - host: docs.ironox.com
+    http_status: 0
+    note: NXDOMAIN
+  - host: developer.ironox.com
+    http_status: 0
+    note: NXDOMAIN
+  - host: support.ironox.com
+    http_status: 0
+    note: NXDOMAIN — Zendesk help center linked from the 2023 site, DNS removed
+  - host: github.com/iron-ox
+    http_status: 200
+    note: >-
+      Genuine Iron Ox GitHub organization (name "Iron Ox", blog http://ironox.com,
+      created 2015-10-10, avatar is the Iron Ox seedling logo). 47 public repos,
+      42 of them forks of ROS-Industrial / MoveIt / Cartographer / vendor camera
+      and arm drivers. The five first-party repos are ROS packages for internal
+      robot control, not a product API contract. Last push 2022.
+  - host: iron-ox.com
+    http_status: 200
+    note: >-
+      NOT this company — "Iron Ox Physical Culture", a Chinese martial arts and
+      Indo-Persian physical culture school in San Diego, California. Namesake
+      only; deliberately not wired as a pointer.
+  - host: inevitabletech.com
+    http_status: 202
+    note: >-
+      NOT this company, despite Y Combinator's directory listing it as Iron Ox's
+      website. Wayback shows the domain serving an unrelated offshore software
+      development / mobile app agency continuously from 2011 through 2024; it is
+      now behind a SiteGround captcha challenge. The YC link is stale. Deliberately
+      not wired as a pointer (STEP 0c ownership check).
+  conclusion: >-
+    No operating host, no developer portal, no API, no machine-readable contract
+    of any kind (OpenAPI, AsyncAPI, GraphQL SDL, MCP, A2A agent card, .proto,
+    WSDL), and no first-party package in npm, PyPI, RubyGems or crates.io.
+specificationVersion: '0.23'
 created: '2026-08-23'
 modified: '2026-08-23'
 tags:
 - Company
+- Agriculture
+- AgTech
+- Robotics
+- Automation
+- Indoor Farming
+- Controlled Environment Agriculture
+- Machine Learning
+- Climate Tech
+- Defunct
 apis: []
+common:
+- type: GitHubOrganization
+  name: Iron Ox on GitHub
+  url: https://github.com/iron-ox
+- type: CompanyProfile
+  name: Y Combinator — Inevitable Tech (Iron Ox), W16
+  url: https://www.ycombinator.com/companies/iron-ox
+- type: Press
+  name: 'TechCrunch — Robotic farming firm Iron Ox raises $53M (2021)'
+  url: https://techcrunch.com/2021/09/23/robotic-farming-firm-iron-ox-raises-53m/
+- type: Press
+  name: 'CNBC — Iron Ox is disrupting agriculture with robots and AI (2022)'
+  url: https://www.cnbc.com/2022/04/18/iron-ox-is-disrupting-agriculture-with-robots-and-ai.html
+- type: Press
+  name: 'TechCrunch — Iron Ox lays off 50, nearly half its staff (2022)'
+  url: https://techcrunch.com/2022/11/03/iron-ox-lays-off-50-amounting-to-nearly-half-its-staff/
+- type: Press
+  name: 'The Robot Report — Reports of layoffs at Iron Ox (2022)'
+  url: https://www.therobotreport.com/reports-of-layoffs-at-iron-ox/
+- type: Press
+  name: 'AgFunderNews — Another blow for indoor farm robotics as Iron Ox lays off nearly half its staff'
+  url: https://agfundernews.com/another-blow-for-indoor-farm-robotics-as-iron-ox-lays-off-nearly-half-its-staff
+- type: WellKnownProbe
+  name: '.well-known probe (all paths soft-404 on a parked host)'
+  url: well-known/iron-ox-well-known.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
-common:
-- type: Website
-  url: https://forgeglobal.com/iron-ox_stock/
+x-enrichment:
+  date: '2026-08-23'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    Iron Ox ceased operations in mid-2023 and ironox.com is now a GoDaddy parking
+    lander that answers HTTP 200 with the same 114-byte redirect to /lander for
+    every path, including /openapi.json and every /.well-known/ document.
+  evidence:
+  - url: https://ironox.com/
+    status: 200
+  - url: https://ironox.com/openapi.json
+    status: 200
+  - url: https://ironox.com/.well-known/agent-card.json
+    status: 200
+  - url: https://api.ironox.com/
+    status: 0
+  - url: http://web.archive.org/web/20230812090055/https://ironox.com/
+    status: 404
+  - url: https://github.com/iron-ox
+    status: 200
+  checked: '2026-08-23'
