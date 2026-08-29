@@ -1,5 +1,16 @@
 aid: iron-ox
 name: Iron Ox
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 image: https://avatars.githubusercontent.com/u/15058167?v=4
 description: 'Iron Ox (legally Inevitable Tech, Inc.) was a San Carlos, California
   robotics company that built autonomous indoor farms — hydroponic greenhouses worked
