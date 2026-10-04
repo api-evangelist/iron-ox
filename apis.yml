@@ -127,7 +127,7 @@ tags:
 - Automation
 - Indoor Farming
 - Controlled Environment Agriculture
-- Machine-Learning
+- Machine Learning
 - Climate Tech
 - Defunct
 tags_raw:
@@ -141,6 +141,7 @@ tags_raw:
 - Machine Learning
 - Climate Tech
 - Defunct
+- Machine-Learning
 apis: []
 common:
 - type: GitHubOrganization
