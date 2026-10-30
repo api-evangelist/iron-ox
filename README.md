@@ -64,5 +64,34 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Iron Ox is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/iron-ox_stock/
+> **No longer operating.** This company or product has shut down, been discontinued, or been deprecated. This profile is kept as a historical record and is not maintained or rated.
+
+Iron Ox (legally Inevitable Tech, Inc.) was a San Carlos, California robotics company that built autonomous indoor farms — hydroponic greenhouses worked by mobile transport robots and a robotic arm that seeded, moved, imaged and harvested leafy greens and herbs, with machine learning used to spot pests and disease plant by plant. Founded in 2015 by Brandon Alexander and Jon Binney, it went through Y Combinator (W16), raised roughly $98 million in total including a $53 million Series C led by Breakthrough Energy Ventures in September 2021, and ran greenhouses in Gilroy, California and Lockhart, Texas. It cut about half its staff — roughly 50 people — in November 2022 and ceased operations in mid-2023. Iron Ox never ran a developer program: it sold produce, not software, and the only public code it ever shipped was internal ROS robotics tooling on GitHub. Its site, ironox.com, is now a GoDaddy parking lander and every developer subdomain has been removed from DNS, so there is no API, specification, SDK or documentation surface left to profile.
+
+**Areas:** Company · Agriculture · AgTech · Robotics · Automation · Indoor Farming · Controlled Environment Agriculture · Machine Learning · Climate Tech · Defunct
+
+## Iron Ox on APIs.io (historical record)
+
+Everything profiled for Iron Ox is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/iron-ox/](https://apis.io/providers/iron-ox/)** — or go straight to one of the APIs or properties below.
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [GitHub](https://github.com/iron-ox)
+
+## API Evangelist rating
+
+**Not rated** — this company is recorded as no longer operating, so no score is published. If it is in fact operating, say so on this repository and it will be re-profiled.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Iron Ox: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/iron-ox/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
